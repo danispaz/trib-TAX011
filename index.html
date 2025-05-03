@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha de Produto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+    .tabs {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+    }
+    .tab {
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-weight: 600;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s;
+    }
+    .tab.active {
+      border-bottom: 3px solid #0078d4;
+      color: #0078d4;
+    }
+    .tab i {
+      color: inherit;
+      transition: color 0.3s;
+    }
+    .tab-content {
+      display: none;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+      color: #505050;
+    }
+    .form-value {
+      background: #f1f3f4;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      color: #2d2d2d;
+    }
+    .icon {
+      font-size: 12px;
+      color: #605e5c;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "Segoe UI", sans-serif;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      margin-top: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .styled-table thead {
+      background-color: #57c1b2;
+      color: white;
+      text-align: left;
+    }
+    .styled-table th,
+    .styled-table td {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+    .styled-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('identificacao')"><i class="fas fa-id-badge icon"></i>Identificação</button>
+    <button class="tab" onclick="showTab('escopo')"><i class="fas fa-list icon"></i>Escopo</button>
+    <button class="tab" onclick="showTab('estrategia')"><i class="fas fa-bullseye icon"></i>Estratégia</button>
+    <button class="tab" onclick="showTab('qualificacao')"><i class="fas fa-check-circle icon"></i>Qualificação</button>
+  </div>
+
+  <div id="identificacao" class="tab-content active">
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-box icon"></i>Nome do Produto</label>
+      <div class="form-value">Compensação Cruzada Tributos Federais
+
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-align-left icon"></i>Descrição do Produto</label>
+      <p class="form-value">
+        Permite utilizar créditos de tributos federais para quitar outros tributos ou débitos inscritos, mesmo que sejam de naturezas diferentes, gerando economia, regularidade fiscal e melhor gestão do caixa da empresa.</p>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-barcode icon"></i>Código</label>
+      <div class="form-value">TAX011</div>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-sitemap icon"></i>Área</label>
+      <div class="form-value">Gestão Tributária</div>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-question-circle icon"></i>Classificação BCG</label>
+      <div class="form-value">Interrogação</div>
+    </div>
+    </div>
+
+  </div>
+
+  <div id="escopo" class="tab-content">
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-file-alt icon"></i>Escopo</label>
+      <div class="form-value">
+        <ol data-start="104" data-end="1296">
+          <li data-start="104" data-end="309" class="" style="">
+          <p data-start="107" data-end="309" class=""><strong data-start="107" data-end="144">Mapeamento de Créditos Acumulados</strong><br data-start="144" data-end="147">
+          Identificação e validação dos créditos de PIS e COFINS disponíveis, com base nos demonstrativos fiscais e contábeis, garantindo aderência à legislação vigente.</p>
+          </li>
+          <li data-start="311" data-end="511" class="" style="">
+          <p data-start="314" data-end="511" class=""><strong data-start="314" data-end="357">Análise de Oportunidades de Compensação</strong><br data-start="357" data-end="360">
+          Avaliação técnica dos tributos federais passíveis de compensação, priorizando os de maior impacto financeiro e potencial de economia para o cliente.</p>
+          </li>
+          <li data-start="513" data-end="695" class="" style="">
+          <p data-start="516" data-end="695" class=""><strong data-start="516" data-end="554">Verificação de Conformidade Fiscal</strong><br data-start="554" data-end="557">
+          Revisão detalhada dos SPEDs e obrigações acessórias para mitigar riscos e assegurar a legitimidade da operação junto à Receita Federal.</p>
+          </li>
+          <li data-start="697" data-end="903" class="" style="">
+          <p data-start="700" data-end="903" class=""><strong data-start="700" data-end="736">Elaboração e Protocolo do Pedido</strong><br data-start="736" data-end="739">
+          Preparação e envio eletrônico da declaração de compensação (PER/DCOMP), observando os critérios técnicos e as especificidades de cada crédito e débito envolvido.</p>
+          </li>
+          <li data-start="905" data-end="1090" class="" style="">
+          <p data-start="908" data-end="1090" class=""><strong data-start="908" data-end="949">Monitoramento e Gestão da Compensação</strong><br data-start="949" data-end="952">
+          Acompanhamento ativo do status da compensação e gestão de eventuais exigências fiscais, com foco na celeridade e segurança do processo.</p>
+          </li>
+          <li data-start="1092" data-end="1296" class="" style="">
+          <p data-start="1095" data-end="1296" class=""><strong data-start="1095" data-end="1136">Apresentação de Resultados ao Cliente</strong><br data-start="1136" data-end="1139">
+          Entrega de relatório com os valores compensados, economia gerada e próximos passos recomendados, reforçando a transparência e o valor agregado do serviço.</p>
+          </li>
+          </ol>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-list-check icon"></i>Problemas que Resolve
+      </label>
+      <div class="form-value">
+        <ol data-start="110" data-end="472">
+          <li data-start="110" data-end="171" class="">
+          <p data-start="113" data-end="171" class="">Acúmulo de créditos de PIS/COFINS sem utilização efetiva</p>
+          </li>
+          <li data-start="172" data-end="238" class="">
+          <p data-start="175" data-end="238" class="">Pagamento indevido de tributos federais com recursos próprios</p>
+          </li>
+          <li data-start="239" data-end="294" class="">
+          <p data-start="242" data-end="294" class="">Falta de liquidez e pressão sobre o fluxo de caixa</p>
+          </li>
+          <li data-start="295" data-end="356" class="">
+          <p data-start="298" data-end="356" class="">Desconhecimento das possibilidades legais de compensação</p>
+          </li>
+          <li data-start="357" data-end="409" class="">
+          <p data-start="360" data-end="409" class="">Risco de autuação por uso incorreto de créditos</p>
+          </li>
+          <li data-start="410" data-end="472" class="">
+          <p data-start="413" data-end="472" class="">Perda de prazos e oportunidades de ressarcimento financeiro</p>
+          </li>
+          </ol>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="	fas fa-trophy icon"></i>Benefícios
+      </label>
+      <div class="form-value">
+        <ol data-start="108" data-end="450">
+          <li data-start="108" data-end="181" class="">
+          <p data-start="111" data-end="181" class="">Redução imediata de débitos federais com uso de créditos disponíveis</p>
+          </li>
+          <li data-start="182" data-end="255" class="">
+          <p data-start="185" data-end="255" class="">Melhoria no fluxo de caixa com menor desembolso de recursos próprios</p>
+          </li>
+          <li data-start="256" data-end="320" class="">
+          <p data-start="259" data-end="320" class="">Recuperação de valores por meio de ressarcimento em espécie</p>
+          </li>
+          <li data-start="321" data-end="388" class="">
+          <p data-start="324" data-end="388" class="">Maior segurança fiscal nas operações de compensação realizadas</p>
+          </li>
+          <li data-start="389" data-end="450" class="">
+          <p data-start="392" data-end="450" class="">Aproveitamento estratégico de créditos antes subutilizados</p>
+          </li>
+          </ol>
+      </div>
+    </div>
+  </div>
+
+  <div id="estrategia" class="tab-content">
+
+    <div class="form-group">
+        <label class="form-label"><i class="fas fa-fire icon"></i>Prioridade de Venda</label>
+        <div class="form-value">Média</div>
+      </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-lightbulb icon"></i>Quando Ofertar</label>
+      <div class="form-value">
+        <ol data-start="96" data-end="522">
+          <li data-start="96" data-end="175" class="">
+          <p data-start="99" data-end="175" class="">Quando a empresa possui créditos acumulados de PIS/COFINS sem uso definido</p>
+          </li>
+          <li data-start="176" data-end="259" class="">
+          <p data-start="179" data-end="259" class="">Ao identificar pagamento recorrente de tributos federais com recursos próprios</p>
+          </li>
+          <li data-start="260" data-end="351" class="">
+          <p data-start="263" data-end="351" class="">Durante análises fiscais que revelam operações com alíquota zero, isentas ou suspensas</p>
+          </li>
+          <li data-start="352" data-end="445" class="">
+          <p data-start="355" data-end="445" class="">Após a entrega do SPED Contribuições, com base em dados concretos de créditos declarados</p>
+          </li>
+          <li data-start="446" data-end="522" class="">
+          <p data-start="449" data-end="522" class="">Em momentos de baixa liquidez ou necessidade de reforço no fluxo de caixa</p>
+          </li>
+          </ol>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-gem icon"></i>Proposta de Valor</label>
+      <div class="form-value">A Compensação Cruzada de Tributos Federais é uma solução estratégica para empresas que acumulam créditos de PIS e COFINS e desejam transformá-los em economia real. Por meio de um processo técnico e seguro, nossa equipe mapeia os créditos elegíveis, identifica as melhores oportunidades de compensação e realiza todos os trâmites com a Receita Federal. Isso significa menos tributos pagos com capital próprio, mais fôlego financeiro e total conformidade fiscal. O diferencial está na nossa capacidade de transformar um ativo esquecido em resultado imediato para o caixa da sua empresa.
+
+
+
+
+    </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-shopping-basket icon"></i>Cross-selling</label>
+      <div class="form-value">
+     
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Produto Complementar</th>
+              <th>Justificativa da Conexão</th>
+              <th>Área Responsável</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Recuperação de Tributos - PIS / COFINS</td>
+              <td>Identifica créditos de PIS/COFINS acumulados que podem ser imediatamente utilizados na compensação cruzada.</td>
+              <td>Gestão Tributária</td>
+            </tr>
+            <tr>
+              <td>Auditoria de Obrigações Acessórias</td>
+              <td>Garante que os dados e documentos usados na compensação estejam corretos, prevenindo autuações.</td>
+              <td>Gestão Tributária</td>
+            </tr>
+            <tr>
+              <td>Exclusão do ICMS da Base de Cálculo do PIS/COFINS</td>
+              <td>Complementa a estratégia ao recuperar valores indevidos, aumentando o montante compensável.</td>
+              <td>Gestão Tributária</td>
+            </tr>
+            <tr>
+              <td>Planejamento Tributário Estadual e Federal – Clientes Base</td>
+              <td>Permite revisar toda a estrutura tributária da empresa e identificar o melhor momento para compensar créditos.</td>
+              <td>Contabilidade</td>
+            </tr>
+            <tr>
+              <td>BPO Contábil e Tributário (Indústria/Comércio ou Transportes)</td>
+              <td>Garante que a escrituração contábil e os créditos estejam corretamente apurados para embasar a compensação.</td>
+              <td>Contabilidade</td>
+            </tr>
+            <tr>
+              <td>Manutenção dos Créditos de PIS e COFINS sobre o ICMS nas Entradas</td>
+              <td>Complementa a compensação com tese jurídica que permite o aumento do volume de créditos a utilizar.</td>
+              <td>Jurídico</td>
+            </tr>
+            <tr>
+              <td>Imunidade de PIS/COFINS no Transporte para Exportação</td>
+              <td>Empresas exportadoras que contratam este serviço tendem a acumular créditos de PIS/COFINS, abrindo espaço para a compensação cruzada.</td>
+              <td>Jurídico</td>
+            </tr>
+            <tr>
+              <td>Planejamento Orçamentário e Fluxo de Caixa</td>
+              <td>Ajuda a mapear momentos estratégicos para compensar tributos, melhorando previsibilidade financeira e aproveitamento dos créditos.</td>
+              <td>Consultoria Empresarial</td>
+            </tr>
+            <tr>
+              <td>Captação, Renegociação e Gestão de Recursos</td>
+              <td>Pode ser oferecido a empresas com dificuldades de caixa e altos pagamentos de tributos, como alternativa de reorganização financeira.</td>
+              <td>Consultoria Empresarial</td>
+            </tr>
+            <tr>
+              <td>Estruturação de Crédito via Securitizadora</td>
+              <td>Clientes com necessidade de liquidez que tenham créditos acumulados podem ser direcionados para essa estrutura financeira em paralelo.</td>
+              <td>Investimentos</td>
+            </tr>
+            <tr>
+              <td>B.I. – Implantação Sistema Atua</td>
+              <td>Empresas do transporte que usam o TMS Atua e contratam BI conseguem visualizar acúmulo de créditos de forma sistematizada, facilitando a decisão de compensar.</td>
+              <td>Business Intelligence</td>
+            </tr>
+            <tr>
+              <td>Incentivos, Benefícios e Estratégias Fiscais</td>
+              <td>Complementa a compensação cruzada com mapeamento de outros regimes e benefícios que aumentam a geração de créditos.</td>
+              <td>Gestão Tributária</td>
+            </tr>
+            <tr>
+              <td>Exclusão do PIS/COFINS da Própria Base de Cálculo</td>
+              <td>A recuperação oriunda dessa tese pode ser aproveitada diretamente no processo de compensação cruzada.</td>
+              <td>Jurídico</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+        
+
+      </div>
+    </div>
+  </div>
+
+  <div id="qualificacao" class="tab-content">
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-briefcase icon"></i>Regime Tributário Atendimento</label>
+      <div class="form-value">Lucro Real</div>
+    </div>
+    <div class="form-group">
+        <label class="form-label"><i class="fas fa-sync-alt icon"></i>Tipo de Cobrança</label>
+        <div class="form-value">Êxito ou Recorrente</div>
+      </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-globe icon"></i>Abrangência Geográfica</label>
+      <div class="form-value">Nacional</div>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label"><i class=" fas fa-file-invoice-dollar icon"></i>Faturamento Ideal</label>
+        <div class="form-value">Indiferente</div>
+      </div>
+
+    <div class="form-group">
+        <label class="form-label"><i class="fas fa-paperclip icon"></i>Documentos Solicitados</label>
+        <div class="form-value">
+          <ol data-start="112" data-end="424">
+            <li data-start="112" data-end="171" class="">
+            <p data-start="115" data-end="171" class="">Demonstrativos contábeis atualizados (balancete e DRE)</p>
+            </li>
+            <li data-start="172" data-end="214" class="">
+            <p data-start="175" data-end="214" class="">SPED Contribuições dos últimos 5 anos</p>
+            </li>
+            <li data-start="215" data-end="261" class="">
+            <p data-start="218" data-end="261" class="">DCTF com débitos passíveis de compensação</p>
+            </li>
+            <li data-start="262" data-end="316" class="">
+            <p data-start="265" data-end="316" class="">Relatório de apuração de créditos de PIS e COFINS</p>
+            </li>
+            <li data-start="317" data-end="370" class="">
+            <p data-start="320" data-end="370" class="">Procuração eletrônica com poderes para PER/DCOMP</p>
+            </li>
+            <li data-start="371" data-end="424" class="">
+            <p data-start="374" data-end="424" class="">Comprovantes de recolhimentos indevidos ou a maior</p>
+            </li>
+            </ol>
+                </div>
+        
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"><i class=" fas fa-industry icon"></i>Setores ICP</label>
+                <div class="form-value"> Transporte, Indústria, Comércio </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label"><i class="fas fa-exclamation-circle icon"></i>Objeções Mapeadas</label>
+                <div class="form-value">
+                  <table class="styled-table">
+                    <thead>
+                      <tr>
+                        <th>Objeção</th>
+                        <th>O que o cliente quer dizer</th>
+                        <th>Como contornar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>"Acho que já usamos esses créditos no dia a dia, não tem nada parado."</td>
+                        <td>O cliente acredita que sua apuração e aproveitamento de créditos já está 100% otimizado.</td>
+                        <td>“É comum o uso parcial dos créditos no próprio sistema, mas nossa atuação vai além: analisamos créditos acumulados de PIS e COFINS que não são consumidos via débitos da mesma natureza e que podem ser compensados com IRPJ, CSLL e outros tributos federais. É uma compensação cruzada estratégica, que a maioria das empresas ainda não faz.”</td>
+                      </tr>
+                      <tr>
+                        <td>"Mas a Receita Federal costuma travar ou demorar muito pra responder isso."</td>
+                        <td>Tem receio de não conseguir usufruir do crédito a curto prazo e se frustrar com a burocracia.</td>
+                        <td>“De fato, há casos em que o Fisco exige análise mais criteriosa, mas é justamente por isso que protocolamos com base em documentação robusta e rastreável. Além disso, muitos créditos podem ser utilizados para abater débitos já existentes, gerando benefício imediato no caixa.”</td>
+                      </tr>
+                      <tr>
+                        <td>"Nossa contabilidade não recomendou fazer esse tipo de compensação."</td>
+                        <td>Está em conflito entre o que ouviu da contabilidade e a nova proposta. Receia se expor.</td>
+                        <td>“Nosso papel é complementar ao da contabilidade. Atuamos com foco técnico em compensações específicas, cruzando dados do SPED Contribuições com obrigações acessórias e débitos fiscais. Inclusive, nossos relatórios finais são entregues prontos para a contabilidade fazer o lançamento correto.”</td>
+                      </tr>
+                      <tr>
+                        <td>"Isso não vai chamar a atenção da Receita? Estamos tentando manter tudo tranquilo aqui."</td>
+                        <td>O cliente quer evitar qualquer ação que possa parecer ousada ou chamar atenção do Fisco.</td>
+                        <td>“A compensação cruzada é um procedimento legal, feito via PER/DCOMP com base em créditos legítimos já declarados. Nosso processo inclui revisão prévia do SPED para garantir que não há riscos de inconsistência. É uma forma de usar o que já é da empresa, com segurança e documentação sólida.”</td>
+                      </tr>
+                      <tr>
+                        <td>"A gente nem sabe se tem crédito acumulado suficiente pra isso."</td>
+                        <td>Não tem clareza sobre seus próprios saldos acumulados e evita avançar por insegurança.</td>
+                        <td>“Essa é exatamente a primeira etapa do serviço. Fazemos um levantamento técnico com base no SPED Contribuições dos últimos 5 anos para identificar e validar créditos acumulados. Muitos clientes se surpreendem com o volume não utilizado.”</td>
+                      </tr>
+                      <tr>
+                        <td>"Prefiro pagar os tributos do jeito tradicional, isso parece complexo."</td>
+                        <td>Está receoso de comprometer sua operação com processos que desconhece.</td>
+                        <td>“Entendo. Mas o objetivo do serviço é justamente aliviar o pagamento tradicional com o uso de um recurso que já é seu. A empresa para de pagar tributos com o próprio caixa e passa a usar os créditos acumulados. Todo o processo é feito por nós, de forma assistida e sem impacto operacional.”</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  
+                                    
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label"><i class=" fas fa-industry icon"></i>Personas</label>
+                <div class="form-value">
+                    <ul data-start="107" data-end="257">
+                        <li data-start="107" data-end="173" class="" style="">
+                        <p data-start="109" data-end="173" class=""><strong data-start="109" data-end="129">Influenciadores:</strong> Consultor, Controller, Gerente Financeiro</p>
+                        </li>
+                        <li data-start="174" data-end="257" class="" style="">
+                        <p data-start="176" data-end="257" class=""><strong data-start="176" data-end="190">Decisores:</strong> CFO, Proprietários, Sócios</p>
+                        </li>
+                        </ul> </div>
+              </div>
+    <div class="form-group">
+      <label class="form-label"><i class="fas fa-star-half-alt icon"></i>Diferenciais</label>
+      <div class="form-value">A Funcional trata a compensação cruzada de tributos federais com o rigor técnico e a segurança jurídica que o tema exige. Nosso diferencial está em realizar uma análise aprofundada da origem dos créditos, da validade legal, da documentação suporte e da elegibilidade para compensação com outros tributos federais, como IRPJ, CSLL, PIS e COFINS.
+
+        Vamos além da apuração: entregamos um processo completo, que inclui parecer técnico, laudo de qualificação do crédito, preenchimento do PER/DCOMP, controle de prazos e riscos de glosa, além de orientação para governança e compliance fiscal.
+        
+        Atuamos com uma visão estratégica, garantindo que a compensação seja feita de forma oportuna, rastreável e sustentável, minimizando riscos e maximizando o aproveitamento dos créditos com respaldo jurídico.
+        
+        Com a Funcional, o cliente não apenas compensa — compensa com confiança e resultado.
+        
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelector(`.tab[onclick="showTab('${id}')"]`).classList.add('active');
+    }
+  </script>
+</body>
+</html>
