@@ -94,6 +94,142 @@
     .styled-table tr:nth-child(even) {
       background-color: #f9f9f9;
     }
+
+    /* tooltip daqui pra baixo*/
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 6px; /* afasta o tooltip do texto “Classificação BCG” */
+}
+
+.info-icon-modern {
+  background-color: #0078d4;
+  border: 1px solid #0078d4;
+  color: #fff;
+  border-radius: 50%;
+  width: 14px;   /* menor largura */
+  height: 14px;  /* menor altura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 10px;  /* opcionalmente menor o "i" */
+  box-shadow: 0 0 0 4px rgba(0, 120, 212, 0.15); /* sombra proporcional */
+}
+
+
+.tooltip-modern {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
+  line-height: 1.5;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  pointer-events: auto; /* ← importante: SEMPRE clicável */
+}
+
+
+.tooltip-modern::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #ccc;
+  z-index: 1;
+}
+
+.tooltip-modern::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 11px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  z-index: 2;
+}
+
+.tooltip-modern a {
+  color: #0078d4;
+  text-decoration: underline;
+  font-weight: 300;
+}
+
+.icon-tooltip {
+  color: #0078d4;
+  font-size: 14px; /* reduzido de 16px ou 18px */
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+
+.tooltip-paragraph {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* igual ao resto do form */
+  font-size: 13px;
+  color: #2d2d2d;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.tooltip-paragraph-semnegrito {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: #2d2d2d;
+  font-weight: 400; /* ← peso normal, não negrito */
+  margin-top: 8px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+
+.tooltip-link {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0078d4;
+  text-decoration: underline;
+}
+
+.tooltip-paragraph {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: #2d2d2d;
+  font-weight: 400; /* ← peso normal, não negrito */
+  margin-top: 8px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.tooltip-box {
+  background-color: #f1f3f4;       /* mesmo fundo da .form-value */
+  border-radius: 6px;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: #2d2d2d;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
   </style>
 </head>
 <body>
@@ -126,7 +262,24 @@
       <div class="form-value">Gestão Tributária</div>
     </div>
     <div class="form-group">
-      <label class="form-label"><i class="fas fa-question-circle icon"></i>Classificação BCG</label>
+   <label class="form-label">
+  <i class="fas fa-question-circle icon"></i> Classificação BCG
+<span class="tooltip-wrapper" onmouseenter="showTooltip()" onmouseleave="hideTooltip()">
+  <div class="info-icon-modern">
+    <i class="fas fa-info"></i>
+  </div>
+  <div class="tooltip-modern" id="tooltip-bcg">
+    <i class="fas fa-info-circle icon-tooltip"></i><strong> O que é a Matriz BCG?</strong><br>
+    <div class="tooltip-box">
+      Ela ajuda a classificar os produtos com base no seu crescimento de mercado e participação relativa.
+    </div>
+    <a class="tooltip-link" href="https://rockcontent.com/br/blog/matriz-bcg/" target="_blank">
+      <strong>Saiba mais aqui</strong>
+    </a>
+  </div>
+</span>
+
+</label>
       <div class="form-value">Interrogação</div>
     </div>
     </div>
@@ -475,5 +628,22 @@
       document.querySelector(`.tab[onclick="showTab('${id}')"]`).classList.add('active');
     }
   </script>
+  <script>
+  const tooltip = document.getElementById("tooltip-bcg");
+  let tooltipTimeout;
+
+  function showTooltip() {
+    clearTimeout(tooltipTimeout);
+    tooltip.style.visibility = "visible";
+    tooltip.style.opacity = "1";
+  }
+
+  function hideTooltip() {
+    tooltipTimeout = setTimeout(() => {
+      tooltip.style.visibility = "hidden";
+      tooltip.style.opacity = "0";
+    }, 200); // espera um pouco antes de esconder
+  }
+</script>
 </body>
 </html>
